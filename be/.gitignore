@@ -1,0 +1,116 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Directory used by tools like babel-loader to cache performance optimizations
+node_modules
+/dist
+
+# Build directory
+/build
+
+# dotenv environment variable files
+.env
+.env.test
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*.swn
+*.swm
+*.swl
+
+# macOS
+.DS_Store
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Yarn
+.yarn-cache
+
+# TypeScript
+*.tsbuildinfo
+
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional tsc transpile output
+*.tsbuildinfo
+
+# node-waf configuration
+.lock-wscript
+
+# next.js build output
+.next
+
+# Nuxt.js build/output
+.nuxt
+dist/
+
+# Parcel
+.cache
+dist/
+
+# React Native, ignore Xcode build products:
+*.mov
+*.mp4
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcworkspace
+*.xcuserstate
+*.xcodeproj
+*.pbxproj
+*.pbxuser
+*.pew
+*.pge
+*.pgm
+*.pkm
+*.pop
+*.pu
+*.pv
+*.pvn
+*.pw
+*.pxm
+*.pxp
+*.pxr
+*.rnc
+*.swp
+*.bak
+*.swx
+*.cgo
+*.exe
+*.a
+*.o
+*.so
+*.dylib
+*.test
+*.prof
+*.out
+*.full
+*.syso
+
+# Expo
+.expo/

@@ -1,0 +1,525 @@
+body {
+	min-height: 100vh;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+#root,
+#page-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+main {
+	flex: 1;
+}
+
+.navbar .d-flex.align-items-center {
+	order: 3;
+	width: 100%;
+	justify-content: end;
+}
+
+.navbar-custom {
+	background-color: #333;
+}
+
+.navbar-brand {
+	font-size: 1rem;
+}
+
+.navbar .form-control {
+	flex-grow: 1;
+}
+
+.navbar .btn {
+	white-space: nowrap;
+}
+
+.navbar a {
+	text-decoration: none;
+}
+
+.CardProduct {
+	background: #d65548;
+}
+
+.product-image-container {
+	position: relative;
+	width: 100%;
+	max-height: 280px;
+	overflow: hidden;
+	border-radius: 0% 50% 50% 50%;
+}
+
+.product-hover-overlay {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: rgba(0, 0, 0, 0.5);
+	color: white;
+	font-weight: bold;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	cursor: pointer;
+	border-radius: 0% 50% 50% 50%;
+}
+
+.product-image-container:hover .product-hover-overlay {
+	opacity: 1;
+}
+
+.product-card {
+	width: 100%;
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+.product-card img {
+	width: 100%;
+	max-height: 320px;
+	border-radius: 0% 50% 50% 50%;
+}
+
+.colorText {
+	background-color: #faba2f;
+	border-radius: 10px;
+	height: 70px;
+	overflow: hidden;
+	font-family: "Bangers", Impact, sans-serif;
+	text-align: center;
+	display: flex;
+	align-items: center;
+}
+
+.Footer {
+	background-color: #323237;
+	text-align: center;
+}
+
+.price {
+	font-size: 1.5rem;
+	color: #faba2f;
+	font-family: "Comic Sans MS", sans-serif;
+}
+
+.bg-UnderCard {
+	border-radius: 20px;
+}
+
+.btn-flip {
+	opacity: 1;
+	outline: 0;
+	color: #fff;
+	line-height: 40px;
+	position: relative;
+	text-align: center;
+	letter-spacing: 1px;
+	display: inline-block;
+	text-decoration: none;
+	font-family: "Open Sans";
+	text-transform: uppercase;
+	font-weight: bold;
+	font-size: 1.5rem;
+}
+.btn-flip:hover:after {
+	opacity: 1;
+	transform: translateY(0) rotateX(0);
+	border-radius: 10px;
+}
+.btn-flip:hover:before {
+	opacity: 0;
+	transform: translateY(50%) rotateX(90deg);
+}
+.btn-flip:after {
+	top: 5px;
+	left: 0;
+	opacity: 0;
+	width: 100%;
+	color: #323237;
+	display: block;
+	transition: 0.5s;
+	position: absolute;
+	background: rgb(250, 186, 47) 58%;
+	content: attr(data-back);
+	transform: translateY(-50%) rotateX(90deg);
+}
+.btn-flip:before {
+	top: 0;
+	left: 0;
+	opacity: 1;
+	color: #adadaf;
+	display: block;
+	padding: 0 20px;
+	line-height: 40px;
+	transition: 0.5s;
+	position: relative;
+	background: #323237;
+	content: attr(data-front);
+	transform: translateY(0) rotateX(0);
+	border-radius: 15px;
+	border: 5px solid rgb(255, 189, 47);
+}
+
+.wishlist-btn {
+	border: none;
+	background-color: transparent;
+	color: grey;
+	cursor: pointer;
+	transition: color 0.3s;
+	font-size: 3rem;
+}
+
+.wishlist-btn.active {
+	color: red;
+}
+
+.notification-badge {
+	font-weight: bold;
+	display: inline-block;
+	min-width: 24px;
+	position: relative;
+	right: 20px;
+	bottom: 20px;
+	font-size: 2rem;
+}
+
+/* original design */
+.units > * {
+	font: bolder 5rem "EB Garamond";
+	background-image: url(https://images.unsplash.com/flagged/photo-1579268351234-073f85929562?w=200&q=80);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+}
+.units {
+	width: max-content;
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	pointer-events: none;
+	position: relative;
+	left: -40px;
+	bottom: 5px;
+}
+
+.dropdown-toggle {
+	cursor: pointer;
+}
+
+.dropdown-menu {
+	display: none;
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+.img-fluid {
+	max-height: 500px;
+	object-fit: cover;
+}
+
+.TitleDetails {
+	font-size: 1.6rem;
+}
+.DescriptionDetails {
+	font-size: 1.7rem;
+}
+.BgRegister {
+	background-color: rgba(0, 0, 0, 0.795);
+	border: 50px solid rgb(31, 30, 30);
+}
+.StripeCheck {
+	width: 75%;
+}
+.BgWishlist {
+	border-radius: 15% 15%;
+}
+
+.top-bar {
+	background-color: #f8f9fa;
+	padding: 10px 0;
+}
+
+.top-bar-link {
+	margin-right: 15px;
+	color: #007bff;
+}
+
+.top-bar-link:last-child {
+	margin-right: 0;
+}
+
+.top-bar-link:hover {
+	text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
+	.navbar .d-flex.align-items-center {
+		order: 3;
+		width: 90%;
+		justify-content: center;
+	}
+	.product-card {
+		max-width: 280px;
+	}
+	.price {
+		font-size: 1.3rem;
+	}
+	.Card_Img {
+		height: 250px;
+		object-fit: cover;
+	}
+	.btn-flip:before {
+		padding: 0 15px;
+		font-size: 1.3rem;
+	}
+	.btn-flip:after {
+		font-size: 1.3rem;
+		position: absolute;
+		top: 5px;
+	}
+	.colorText {
+		font-size: 1.2rem !important;
+		height: 60px;
+	}
+	.Wishlist {
+		height: 50px;
+	}
+	.Cart {
+		height: 60px;
+	}
+	.notification-badge {
+		padding: 2px 10px;
+		font-size: 1.7rem;
+		position: relative;
+
+		right: 25px;
+		bottom: 25px;
+	}
+	.units > * {
+		font: bolder 4rem "EB Garamond";
+	}
+	.DescriptionDetails {
+		font-size: 1.5rem;
+	}
+}
+
+@media (max-width: 992px) {
+	.Wishlist {
+		height: 45px;
+	}
+	.Cart {
+		height: 50px;
+	}
+	.notification-badge {
+		padding: 2px 10px;
+		font-size: 1.3rem;
+		position: relative;
+		right: 20px;
+		bottom: 25px;
+		overflow: hidden;
+	}
+	.units > * {
+		font: bolder 4rem "EB Garamond";
+		background-image: url(https://images.unsplash.com/flagged/photo-1579268351234-073f85929562?w=200&q=80);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+	}
+	.DescriptionDetails {
+		font-size: 1.2rem;
+	}
+}
+
+@media (max-width: 790px) {
+	.btn-flip,
+	.wishlist-btn {
+		font-size: 2rem;
+		padding: 0.25rem 0.5rem;
+	}
+
+	.price {
+		font-size: 1.5rem;
+	}
+	.units > * {
+		font: bolder 5rem "EB Garamond";
+		background-image: url(https://images.unsplash.com/flagged/photo-1579268351234-073f85929562?w=200&q=80);
+		background-clip: text;
+		-webkit-background-clip: text;
+		color: transparent;
+		margin-left: 80px;
+	}
+	.navbar .container {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.navbar .units {
+		order: 2;
+	}
+
+	.navbar .d-flex.align-items-center {
+		order: 3;
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 768px) {
+	.Wishlist {
+		position: relative;
+		left: 10px;
+		height: 60px;
+	}
+	.Cart {
+		position: relative;
+		left: 10px;
+		height: 64px;
+	}
+	.notification-badge.first-badge {
+		padding: 2px 10px;
+		font-size: 2rem;
+		position: relative;
+		bottom: 15px;
+		right: 15px;
+
+		overflow: hidden;
+	}
+	.notification-badge.second-badge {
+		position: relative;
+		right: 70px;
+		bottom: 15px;
+		font-size: 2rem;
+	}
+	.TitleDetails {
+		font-size: 1.5rem;
+	}
+	.DescriptionDetails {
+		font-size: 1rem;
+	}
+}
+
+@media (max-width: 516px) {
+	.product-card {
+		max-width: 200px;
+	}
+	.price {
+		font-size: 1rem;
+	}
+	.Card_Img {
+		height: 180px;
+		object-fit: cover;
+	}
+	.btn-flip:before {
+		padding: 0 10px;
+		font-size: 1rem;
+	}
+	.btn-flip:after {
+		font-size: 1rem;
+		position: absolute;
+		top: 8px;
+	}
+	.colorText {
+		font-size: 1rem !important;
+		height: 60px;
+	}
+	.Wishlist {
+		height: 50px;
+	}
+	.Cart {
+		height: 60px;
+	}
+	.units > * {
+		font: bolder 3.5rem "EB Garamond";
+		position: relative;
+	}
+	.BgRegister {
+		border: 25px solid rgba(24, 8, 8, 0.445);
+	}
+	.product-image-container {
+		max-height: 230px;
+	}
+}
+
+@media (max-width: 383px) {
+	.product-card {
+		max-width: 200px;
+	}
+	.price {
+		font-size: 1rem;
+	}
+	.Card_Img {
+		height: 150px;
+		object-fit: cover;
+	}
+	.btn-flip:before {
+		padding: 0 5px;
+		font-size: 1rem;
+		border: 3px solid rgb(255, 189, 47);
+	}
+	.btn-flip:after {
+		font-size: 1rem;
+		position: absolute;
+		top: 8px;
+	}
+	.colorText {
+		font-size: 1rem !important;
+		height: 60px;
+	}
+	.units > * {
+		font: bolder 3.3rem "EB Garamond";
+		position: relative;
+	}
+	.BgRegister {
+		border: 15px solid rgba(24, 8, 8, 0.445);
+	}
+	.product-image-container {
+		max-height: 200px;
+	}
+}
+@media (max-width: 375px) {
+	.units > * {
+		font: bolder 4rem "EB Garamond";
+		position: relative;
+		left: 15px;
+		max-width: 200px;
+	}
+}
+
+@media (max-width: 320px) {
+	.price {
+		font-size: 0.8rem;
+	}
+	.Card_Img {
+		height: 150px;
+		object-fit: cover;
+	}
+	.btn-flip:before {
+		padding: 0 5px;
+		font-size: 1rem;
+	}
+	.btn-flip:after {
+		font-size: 1rem;
+		position: absolute;
+		top: 5px;
+	}
+	.colorText {
+		font-size: 0.8rem !important;
+		height: 50px;
+	}
+	.wishlist-btn {
+		font-size: 1.5rem;
+		padding: 0.25rem 0.5rem;
+	}
+	.product-image-container {
+		max-height: 180px;
+	}
+}

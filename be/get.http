@@ -1,0 +1,28 @@
+GET http://localhost:5050/auth/register
+
+####
+
+GET http://localhost:5050/products/653c0356c6145712b51ec77f
+
+###
+
+POST http://localhost:5050/auth/register HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "email": "mikulend@gmail.com",
+    "password": "d735pa"
+}
+
+###
+
+POST http://localhost:5050/auth/login HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "email": "mikeyoulend@gmail.com",
+    "password": "d735pa"
+}
+
