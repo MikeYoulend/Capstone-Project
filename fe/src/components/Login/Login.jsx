@@ -20,6 +20,7 @@ const Login = () => {
 				credentials
 			);
 			localStorage.setItem("token", response.data.token);
+			localStorage.setItem("username", response.data.username); // Salva l'username
 			navigate("/");
 		} catch (error) {
 			if (error.response) {

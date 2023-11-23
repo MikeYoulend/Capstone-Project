@@ -49,10 +49,11 @@ router.post("/login", async (req, res) => {
 			expiresIn: "1h",
 		});
 
-		res.send({ token });
+		res.send({ token, username: user.username }); // Invia anche lo username
 	} catch (error) {
 		console.error("Login error:", error);
 		res.status(500).send("An error occurred during login.");
 	}
 });
+
 module.exports = router;
