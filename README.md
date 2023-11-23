@@ -2,6 +2,8 @@ Gon's House:
 è un Marketplace a tema manga/carte collezionabili.
 Avrai la possibilità di entrare nel mio mondo NERD e condividere con i tuoi amici le tue passioni più care.
 
+DEPLOY LIVE: https://symphonious-kelpie-be2d51.netlify.app/
+
 Per far partire il progetto, andare nelle rispettive cartelle
 be ---> npm run dev
 fe ---> npm start
