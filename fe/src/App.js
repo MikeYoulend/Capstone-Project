@@ -11,6 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { CartProvider } from "./components/Cart/useCart";
 import Footer from "./components/footer/Footer";
 import NotFoundPage from "./pages/NotFoundPage";
+import ProfilePage from "./components/profile/ProfilePage";
 
 function App() {
 	return (
@@ -22,6 +23,7 @@ function App() {
 							<Route path="/register" element={<RegisterPage />} />
 							<Route path="/login" element={<LoginPage />} />
 							<Route path="/" element={<Homepage />} />
+							<Route path="/profile" element={<ProfilePage />} />
 							<Route path="/cart" element={<CartPage />} />
 							<Route path="/wishlist" element={<WishlistPage />} />
 							<Route path="/add-product" element={<ProductFormPage />} />

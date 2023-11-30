@@ -5,6 +5,34 @@ const bcrypt = require("bcrypt");
 require("dotenv").config();
 const User = require("../models/user");
 
+const verifyToken = (req, res, next) => {
+	const authHeader = req.headers.authorization;
+	console.log("Authorization Header:", authHeader); // Log dell'header di autorizzazione
+
+	if (!authHeader) {
+		return res
+			.status(401)
+			.json({ message: "Accesso negato. Nessun token fornito." });
+	}
+
+	const token = authHeader.split(" ")[1]; // Bearer TOKEN_STRING
+	console.log("Token:", token); // Log del token
+
+	if (!token) {
+		return res.status(401).json({ message: "Token non presente." });
+	}
+
+	try {
+		const verified = jwt.verify(token, process.env.JWT_KEY);
+		console.log("Verified:", verified); // Log del risultato della verifica
+		req.user = verified;
+		next();
+	} catch (error) {
+		console.error("Errore di verifica del token:", error);
+		res.status(400).json({ message: "Token non valido." });
+	}
+};
+
 router.post("/register", async (req, res) => {
 	try {
 		const { email, username, password } = req.body;
@@ -53,6 +81,34 @@ router.post("/login", async (req, res) => {
 	} catch (error) {
 		console.error("Login error:", error);
 		res.status(500).send("An error occurred during login.");
+	}
+});
+
+router.get("/profile", verifyToken, async (req, res) => {
+	try {
+		const userId = req.user.userId;
+		const user = await User.findById(userId).select("-password"); // Escludi la password
+		if (!user) {
+			return res.status(404).json({ message: "Utente non trovato." });
+		}
+		res.json(user);
+	} catch (error) {
+		console.error("Errore durante la richiesta del profilo:", error);
+		res.status(500).json({ message: "Errore interno del server." });
+	}
+});
+
+// Route per aggiornare i dati del profilo
+router.put("/profile", verifyToken, async (req, res) => {
+	try {
+		const userId = req.user.userId;
+		const user = await User.findByIdAndUpdate(userId, req.body, {
+			new: true,
+		}).select("-password");
+		res.json(user);
+	} catch (error) {
+		console.error("Errore durante l'aggiornamento del profilo:", error);
+		res.status(500).json({ message: "Errore interno del server." });
 	}
 });
 

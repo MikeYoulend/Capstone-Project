@@ -2,19 +2,18 @@ const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
 const userSchema = new mongoose.Schema({
-	email: {
+	email: { type: String, required: true, unique: true },
+	username: { type: String, required: false },
+	password: { type: String, required: true },
+	fullName: { type: String, required: false },
+	address: { type: String, required: false },
+	gender: {
 		type: String,
-		required: true,
-		unique: true,
+		enum: ["male", "female", "unspecified"],
+		default: "unspecified",
 	},
-	username: {
-		type: String,
-		required: false,
-	},
-	password: {
-		type: String,
-		required: true,
-	},
+	phoneNumber: { type: String, required: false },
+	profileImage: { type: String, required: false },
 });
 
 userSchema.methods.comparePassword = function (candidatePassword) {
