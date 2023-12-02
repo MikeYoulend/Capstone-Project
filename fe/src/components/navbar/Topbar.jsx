@@ -22,10 +22,6 @@ function TopBar() {
 		navigate(0); // Ricarica la pagina
 	};
 
-	const handleProfileClick = () => {
-		navigate("/profile");
-	};
-
 	return (
 		<div className="top-bar">
 			<Container>
@@ -46,10 +42,7 @@ function TopBar() {
 						)}
 						{isLoggedIn && (
 							<>
-								<span
-									onClick={handleProfileClick}
-									className="top-bar-link cursor-pointer text-danger mx-2"
-								>
+								<span className="top-bar-link cursor-pointer text-danger mx-2">
 									{username}
 								</span>
 								<button
